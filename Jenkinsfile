@@ -5,7 +5,7 @@ pipeline {
             steps { git branch: 'main', url: 'https://github.com/Shreyaa-Mishraa/jenkins-cicd-demo.git' }
         }
         stage('Install Dependencies') {
-            steps { sh 'pip install -r requirements.txt' }
+            steps { sh 'pip3 install -r requirements.txt --break-system-packages' }
         }
         stage('Build') {
             steps { sh 'docker build -t jenkins-with-git .' }
